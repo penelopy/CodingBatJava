@@ -34,12 +34,10 @@ public class String1Test {
     }
 
     @Test
-    public void extraFront() {
+    public void extraFrontReturnsCorrectValue() {
         assertThat(String1.extraFront("Hello"), equalTo("HeHeHe"));
         assertThat(String1.extraFront("ab"), equalTo("ababab"));
         assertThat(String1.extraFront("H"), equalTo("HHH"));
         assertThat(String1.extraFront(""), equalTo(""));
-
     }
-
 }

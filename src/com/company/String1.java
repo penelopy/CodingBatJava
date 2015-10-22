@@ -24,8 +24,9 @@ public class String1 {
         });
     }
 
-    /**Given a string, if one or both of the first 2 chars is 'x', return the string without those 'x' chars, and
-     otherwise return the string unchanged. This is a little harder than it looks.  Ex. xHi
+    /**
+     * Given a string, if one or both of the first 2 chars is 'x', return the string without those 'x' chars, and
+     * otherwise return the string unchanged. This is a little harder than it looks.  Ex. xHi
      */
 
     public static String withoutX2(String str) {
@@ -33,16 +34,13 @@ public class String1 {
         StringBuilder result = new StringBuilder();
         if (str == "") {
             return str;
-        }
-        else if (arr.length == 1) {
+        } else if (arr.length == 1) {
             if (arr[0] != 'x') {
                 return str;
-            }
-            else {
+            } else {
                 return "";
             }
-        }
-        else {
+        } else {
             if (arr[0] != 'x') {
                 result.append(arr[0]);
             }
@@ -57,44 +55,31 @@ public class String1 {
 
     }
 
-    /**Given a string, return a new string made of 3 copies of the first 2 chars of the original string. The string may
-    be any length. If there are fewer than 2 chars, use whatever is there.*/
-
     /**
-     initialize new string
-     copy first char
-     copy 2nd char
-     repeat pattern 3 times
-     ignore all remaining letters
+     * Given a string, return a new string made of 3 copies of the first 2 chars of the     * original string. The string may be any length. If there are fewer than 2 chars,      * use whatever is there.
      */
 
     public static String extraFront(String str) {
-        char [] arr = str.toCharArray();
+        if (str.isEmpty()) {
+            return "";
+        }
         StringBuilder result = new StringBuilder();
         int i = 0;
-
-        if (str.length() >= 2) {
+        if (str.length() ==1) {
             while (i <= 2) {
-                result.append(arr[0]);
-                result.append(arr[1]);
+                result.append(str.charAt(0));
                 i++;
             }
-            return result.toString();
         }
         else {
-            if (str.length() == 1) {
-                while (i <= 2) {
-                    result.append(arr[0]);
-                    i++;
-                }
-            return result.toString();
-            }
-            else {
-                return "";
+            while (i <= 2) {
+                result.append(str.charAt(0));
+                result.append(str.charAt(1));
+                i++;
             }
         }
+        return result.toString();
     }
-
 }
 
 
